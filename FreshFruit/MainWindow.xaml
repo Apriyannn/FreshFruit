@@ -1,0 +1,42 @@
+﻿<Window x:Class="FreshFruit.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FreshFruit"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="#FFFB0F0F">
+        <Label Content="MENU" HorizontalAlignment="Left" Margin="86,10,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="14">
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Background>
+        </Label>
+        <Label Content="JENIS BUAH-BUAHAN" HorizontalAlignment="Left" Margin="34,44,0,0" VerticalAlignment="Top" Background="#FF008BFF" BorderBrush="White" FontWeight="Bold" FontSize="14"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="45,90,0,0" VerticalAlignment="Top" Width="100" Source="/Assets/anggur.jpg"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="45,268,0,0" VerticalAlignment="Top" Width="100" Source="/Assets/banana.jpg"/>
+        <Button x:Name="ButtonAddAnggur" Content="Add" HorizontalAlignment="Left" Margin="78,0,0,0" VerticalAlignment="Center" Click="OnButtonAddAnggurClicked" Background="#FFF102BB" Foreground="Black" FontWeight="Bold" FontSize="14"/>
+        <Button x:Name="ButtonAddBanana" Content="Add" HorizontalAlignment="Left" Margin="78,383,0,0" VerticalAlignment="Top" Click="OnButtonAddBananaClicked" Background="#FFF3FF00" FontWeight="Bold" FontSize="14"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="245,90,0,0" VerticalAlignment="Top" Width="100" Source="/Assets/apple.png"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="245,268,0,0" VerticalAlignment="Top" Width="100" Source="/Assets/orange.png"/>
+        <Button x:Name="ButtonAddApple" Content="Add" HorizontalAlignment="Left" Margin="277,0,0,0" VerticalAlignment="Center" Click="OnButtonAddAppleClicked" Foreground="Black" Background="Red" FontWeight="Bold" FontSize="14"/>
+        <Button x:Name="ButtonAddOrange" Content="Add" HorizontalAlignment="Left" Margin="277,383,0,0" VerticalAlignment="Top" Click="OnButtonAddOrangeClicked" Foreground="Black" Background="#FFFF8B00" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Daftar Pilih" HorizontalAlignment="Left" Margin="400,53,0,0" VerticalAlignment="Top" Width="93" Background="#FF23FF00" FontWeight="Bold" FontSize="14"/>
+        <ListBox x:Name="ListBoxBucket" Margin="400,105,26,135" Background="#FF00F3FF">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding name}" TextAlignment="Left"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+    </Grid>
+</Window>
